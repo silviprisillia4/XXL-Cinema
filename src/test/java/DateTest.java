@@ -12,7 +12,7 @@ public class DateTest {
         int date = 9;
 
         int expected = 35000;
-        int actual = c.calculatePriceByDate(date);
+        int actual = c.getPriceByDate(date);
         Assert.assertEquals(expected, actual);
     }
 
@@ -21,7 +21,7 @@ public class DateTest {
         int date = 25;
 
         int expected = 40000;
-        int actual = c.calculatePriceByDate(date);
+        int actual = c.getPriceByDate(date);
         Assert.assertEquals(expected, actual);
     }
 
@@ -30,7 +30,7 @@ public class DateTest {
         int date = 1;
 
         int expected = 50000;
-        int actual = c.calculatePriceByDate(date);
+        int actual = c.getPriceByDate(date);
         Assert.assertEquals(expected, actual);
     }
 

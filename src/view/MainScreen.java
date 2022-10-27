@@ -35,7 +35,7 @@ public class MainScreen {
         new InputPaymentScreen(ticket);
 
         // hitung harga ticket (sesuai tanggal)
-        ticket.setPrice(c.calculatePriceByDate(ticket.getDate().getDateSubstring()));
+        ticket.setPrice(c.getPriceByDate(ticket.getDate().getDateSubstring()));
 
         // hitung harga tiket * banyaknya orang
         ticket.setPrice(c.calculatePriceByPerson(ticket.getPrice(), ticket.getPerson()));

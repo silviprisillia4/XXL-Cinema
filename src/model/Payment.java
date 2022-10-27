@@ -2,11 +2,14 @@ package model;
 
 public class Payment {
 
-    private String[] payments = { "OVO", "GoPay", "Dana", "LinkAja" };
+    private String payment;
     private int selectedPayment;
 
-    public String[] getPayments() {
-        return payments;
+    public void setPayment(String payment) {
+        this.payment = payment;
+    }
+    public String getPayment() {
+        return payment;
     }
 
     public int getSelectedPayment() {

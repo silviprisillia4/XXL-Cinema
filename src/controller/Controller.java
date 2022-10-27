@@ -198,7 +198,7 @@ public class Controller {
         return randomNumber;
     }
 
-    public int calculatePriceByDate(int date) {
+    public int getPriceByDate(int date) {
         int[] specialDate1 = { 4, 9 };
         int[] specialDate2 = { 2, 25, 29 };
         int price = 50000;
@@ -223,21 +223,21 @@ public class Controller {
         return price * person;
     }
 
-    public double calculateDiscountPercentageByPayment(double price, int selectedPayment) {
+    public double getDiscountPercentageByPayment(double price, int selectedPayment) {
         int priceBoundary = 100000;
         double ovoDiscount = 0.3;
         double gopayDiscount = 0.2;
         double noDiscount = 0;
-        if (selectedPayment == 1 && price >= priceBoundary) {
+        if (selectedPayment == PaymentMethods.OVO && price >= priceBoundary) {
             return ovoDiscount;
-        } else if (selectedPayment == 2 && price >= priceBoundary) {
+        } else if (selectedPayment == PaymentMethods.GOPAY && price >= priceBoundary) {
             return gopayDiscount;
         }
         return noDiscount;
     }
 
     public double calculatePriceAfterDiscount(double price, int selectedPayment) {
-        double discount = calculateDiscountPercentageByPayment(price, selectedPayment);
+        double discount = getDiscountPercentageByPayment(price, selectedPayment);
         return price -= price * discount;
     }
 
@@ -258,7 +258,7 @@ public class Controller {
                 + "\nWaktu: " + ticket.getMovie().getTime() + ""
                 + "\nKursi:" + concatenateSeat(ticket.getSeat().getSeats()) + " (" + ticket.getPerson() + " tiket)"
                 + "\nMetode pembayaran: "
-                + ticket.getPayment().getPayments()[ticket.getPayment().getSelectedPayment() - 1] + ""
+                + ticket.getPayment().getPayment() + ""
                 + "\nTotal bayar: " + String.format("%.0f", ticket.getPrice()) + "\n" // harga setelah
                                                                                       // diskon
                 + "\nSUDAH LUNAS", "XXL CINEMA", JOptionPane.INFORMATION_MESSAGE);
