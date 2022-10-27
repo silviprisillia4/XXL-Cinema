@@ -223,7 +223,7 @@ public class Controller {
         return price * person;
     }
 
-    public double getDiscountPercentageByPayment(double price, int selectedPayment) {
+    public double getDiscountPercentageByPayment(double price, PaymentMethods selectedPayment) {
         int priceBoundary = 100000;
         double ovoDiscount = 0.3;
         double gopayDiscount = 0.2;
@@ -236,7 +236,7 @@ public class Controller {
         return noDiscount;
     }
 
-    public double calculatePriceAfterDiscount(double price, int selectedPayment) {
+    public double calculatePriceAfterDiscount(double price, PaymentMethods selectedPayment) {
         double discount = getDiscountPercentageByPayment(price, selectedPayment);
         return price -= price * discount;
     }
@@ -258,7 +258,7 @@ public class Controller {
                 + "\nWaktu: " + ticket.getMovie().getTime() + ""
                 + "\nKursi:" + concatenateSeat(ticket.getSeat().getSeats()) + " (" + ticket.getPerson() + " tiket)"
                 + "\nMetode pembayaran: "
-                + ticket.getPayment().getPayment() + ""
+                + ticket.getPayment().getSelectedPayment() + ""
                 + "\nTotal bayar: " + String.format("%.0f", ticket.getPrice()) + "\n" // harga setelah
                                                                                       // diskon
                 + "\nSUDAH LUNAS", "XXL CINEMA", JOptionPane.INFORMATION_MESSAGE);

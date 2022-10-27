@@ -13,23 +13,24 @@ public class InputPaymentScreen {
     }
 
     private void createInputPaymentScreen(Ticket ticket) {
+        int selectedPayment;
         do {
-            ticket.getPayment().setSelectedPayment(Integer.parseInt(JOptionPane.showInputDialog(null,
+            selectedPayment = Integer.parseInt(JOptionPane.showInputDialog(null,
                     "Metode pembayaran (1-4) :\n1. OVO (diskon 30%*)\n2. Gopay (diskon 20%*)\n3. Dana\n4. LinkAja\n*diskon berlaku minimal pembelian 100000",
-                    "XXL CINEMA", JOptionPane.INFORMATION_MESSAGE)));
-            if (c.isValidPayment(ticket.getPayment().getSelectedPayment())) {
-                switch (ticket.getPayment().getSelectedPayment()) {
+                    "XXL CINEMA", JOptionPane.INFORMATION_MESSAGE));
+            if (c.isValidPayment(selectedPayment)) {
+                switch (selectedPayment) {
                     case 1:
-                        ticket.getPayment().setPayment("OVO");
+                        ticket.getPayment().setSelectedPayment(PaymentMethods.OVO);
                         break;
                     case 2:
-                        ticket.getPayment().setPayment("GOPAY");
+                        ticket.getPayment().setSelectedPayment(PaymentMethods.GOPAY);
                         break;
                     case 3:
-                        ticket.getPayment().setPayment("Dana");
+                        ticket.getPayment().setSelectedPayment(PaymentMethods.DANA);
                         break;
                     case 4:
-                        ticket.getPayment().setPayment("Link Aja");
+                        ticket.getPayment().setSelectedPayment(PaymentMethods.LINKAJA);
                         break;
                 }
             } else {
@@ -38,7 +39,7 @@ public class InputPaymentScreen {
                     "XXL CINEMA", JOptionPane.YES_NO_OPTION);
             }
             
-        } while (!c.isValidPayment(ticket.getPayment().getSelectedPayment()));
+        } while (!c.isValidPayment(selectedPayment));
 
     }
 }

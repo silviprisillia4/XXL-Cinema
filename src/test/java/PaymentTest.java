@@ -11,7 +11,7 @@ public class PaymentTest {
     @Test
     public void testOVOPaymentAboveBoundary() {
         double price = 200000;
-        int payment = PaymentMethods.OVO;
+        PaymentMethods payment = PaymentMethods.OVO;
 
         double expected = 0.3;
         double actual = c.getDiscountPercentageByPayment(price, payment);
@@ -21,7 +21,7 @@ public class PaymentTest {
     @Test
     public void testOVOPaymentBelowBoundary() {
         double price = 50000;
-        int payment = PaymentMethods.OVO;
+        PaymentMethods payment = PaymentMethods.OVO;
 
         double expected = 0;
         double actual = c.getDiscountPercentageByPayment(price, payment);
@@ -31,7 +31,7 @@ public class PaymentTest {
     @Test
     public void testGoPayPaymentAboveBoundary() {
         double price = 200000;
-        int payment = PaymentMethods.GOPAY;
+        PaymentMethods payment = PaymentMethods.GOPAY;
 
         double expected = 0.2;
         double actual = c.getDiscountPercentageByPayment(price, payment);
@@ -41,7 +41,7 @@ public class PaymentTest {
     @Test
     public void testGopayPaymentBelowBoundary() {
         double price = 50000;
-        int payment = PaymentMethods.GOPAY;
+        PaymentMethods payment = PaymentMethods.GOPAY;
 
         double expected = 0;
         double actual = c.getDiscountPercentageByPayment(price, payment);
@@ -51,7 +51,7 @@ public class PaymentTest {
     @Test
     public void testAnotherPaymentAboveBoundary() {
         double price = 200000;
-        int payment = PaymentMethods.DANA;
+        PaymentMethods payment = PaymentMethods.DANA;
 
         double expected = 0;
         double actual = c.getDiscountPercentageByPayment(price, payment);
@@ -61,7 +61,7 @@ public class PaymentTest {
     @Test
     public void testAnotherPaymentBelowBoundary() {
         double price = 50000;
-        int payment = PaymentMethods.LINKAJA;
+        PaymentMethods payment = PaymentMethods.LINKAJA;
 
         double expected = 0;
         double actual = c.getDiscountPercentageByPayment(price, payment);

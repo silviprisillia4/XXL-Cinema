@@ -1,22 +1,14 @@
 package model;
 
-public class Payment {
+public class Payment  {
 
-    private String payment;
-    private int selectedPayment;
+    private PaymentMethods selectedPayment;
 
-    public void setPayment(String payment) {
-        this.payment = payment;
-    }
-    public String getPayment() {
-        return payment;
-    }
-
-    public int getSelectedPayment() {
+    public PaymentMethods getSelectedPayment() {
         return selectedPayment;
     }
 
-    public void setSelectedPayment(int selectedPayment) {
+    public void setSelectedPayment(PaymentMethods selectedPayment) {
         this.selectedPayment = selectedPayment;
     }
 
