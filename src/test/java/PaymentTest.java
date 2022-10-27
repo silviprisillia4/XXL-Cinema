@@ -13,7 +13,7 @@ public class PaymentTest {
         int payment = 1;
 
         double expected = 0.3;
-        double actual = c.calculatePriceByPayment(price, payment);
+        double actual = c.calculateDiscountPercentageByPayment(price, payment);
         Assert.assertEquals(expected, actual, 0);
     }
 
@@ -23,7 +23,7 @@ public class PaymentTest {
         int payment = 1;
 
         double expected = 1;
-        double actual = c.calculatePriceByPayment(price, payment);
+        double actual = c.calculateDiscountPercentageByPayment(price, payment);
         Assert.assertEquals(expected, actual, 0);
     }
 
@@ -33,7 +33,7 @@ public class PaymentTest {
         int payment = 2;
 
         double expected = 0.2;
-        double actual = c.calculatePriceByPayment(price, payment);
+        double actual = c.calculateDiscountPercentageByPayment(price, payment);
         Assert.assertEquals(expected, actual, 0);
     }
 
@@ -43,7 +43,7 @@ public class PaymentTest {
         int payment = 2;
 
         double expected = 1;
-        double actual = c.calculatePriceByPayment(price, payment);
+        double actual = c.calculateDiscountPercentageByPayment(price, payment);
         Assert.assertEquals(expected, actual, 0);
     }
 
@@ -53,7 +53,7 @@ public class PaymentTest {
         int payment = 3;
 
         double expected = 1;
-        double actual = c.calculatePriceByPayment(price, payment);
+        double actual = c.calculateDiscountPercentageByPayment(price, payment);
         Assert.assertEquals(expected, actual, 0);
     }
 
@@ -63,7 +63,7 @@ public class PaymentTest {
         int payment = 4;
 
         double expected = 1;
-        double actual = c.calculatePriceByPayment(price, payment);
+        double actual = c.calculateDiscountPercentageByPayment(price, payment);
         Assert.assertEquals(expected, actual, 0);
     }
 }

@@ -223,11 +223,11 @@ public class Controller {
         return price * person;
     }
 
-    public double calculatePriceByPayment(double price, int selectedPayment) {
+    public double calculateDiscountPercentageByPayment(double price, int selectedPayment) {
         int priceBoundary = 100000;
         double ovoDiscount = 0.3;
         double gopayDiscount = 0.2;
-        double noDiscount = 1;
+        double noDiscount = 0;
         if (selectedPayment == 1 && price >= priceBoundary) {
             return ovoDiscount;
         } else if (selectedPayment == 2 && price >= priceBoundary) {
@@ -237,9 +237,8 @@ public class Controller {
     }
 
     public double calculatePriceAfterDiscount(double price, int selectedPayment) {
-        double discount = calculatePriceByPayment(price, selectedPayment);
-        price -= price * discount;
-        return price;
+        double discount = calculateDiscountPercentageByPayment(price, selectedPayment);
+        return price -= price * discount;
     }
 
     public String concatenateSeat(ArrayList<String> seats) {
