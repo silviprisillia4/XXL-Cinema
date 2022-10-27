@@ -115,7 +115,7 @@ public class ValidateTest {
     }
 
     @Test
-    public void testinValidNumber() {
+    public void testInvalidNumber() {
         int number = -2;
 
         boolean expected = false;
